@@ -1,0 +1,202 @@
+<div class="wrapper-box">
+  <div class="main-wrapper">
+    <!--Header Part Start-->
+    <header id="header">
+      <div class="htop">
+        <div id="language"> <span>Language<b></b></span>
+          <ul>
+            <li><a title="English"><img src="assets/image/flags/gb.png" alt="English" />English</a></li>
+            <li><a title="Türkçe"><img src="assets/image/flags/tr.png" alt="Türkçe" />Türkçe</a></li>
+          </ul>
+        </div>
+        <div id="currency"> <span>Currency<b></b></span>
+          <ul>
+            <li> <a title="Euro">€ - Euro</a> </li>
+            <li> <a title="Pound Sterling">£ - Pound Sterling</a> </li>
+            <li> <a title="US Dollar"><b>$ - US Dollar</b></a> </li>
+          </ul>
+        </div>
+        <div class="links">
+          <ng-container *ngFor="let item of subMenuItems" >
+            <a *ngIf="item.visible && (isLoggedIn === false)" [routerLink]="item.url">{{item.name}}</a>
+          </ng-container>
+          <a *ngIf="isLoggedIn === true" (click)="logout()">Logout</a>
+        </div>
+      </div>
+      <section class="hsecond">
+        <div id="logo"><a href="/"><img src="assets/image/logo.png" title="Polishop" alt="Polishop" /></a></div>
+        <div id="search">
+          <div class="button-search"></div>
+          <input type="text" name="search" placeholder="Search" value="" />
+        </div>
+        <!--Mini Shopping Cart Start-->
+        <section id="cart">
+          <div class="heading">
+            <h4><img width="32" height="32" alt="" src="assets/image/cart-bg.png"></h4>
+            <a><span id="cart-total">2 item(s) - $710.18</span></a> </div>
+          <div class="content">
+            <div class="mini-cart-info">
+              <table>
+                <tr>
+                  <td class="image"><a href="product.html"><img src="assets/image/product/lotto-sports-shoes-white-47x47.jpg" alt="Lotto Sports Shoes" title="Lotto Sports Shoes" /></a></td>
+                  <td class="name"><a href="product.html">Lotto Sports Shoes</a></td>
+                  <td class="quantity">x&nbsp;1</td>
+                  <td class="total">$589.50</td>
+                  <td class="remove"><img src="assets/image/remove-small.png" alt="Remove" title="Remove" /></td>
+                </tr>
+                <tr>
+                  <td class="image"><a href="product.html"><img src="assets/image/product/iphone_1-47x47.jpg" alt="iPhone 4s" title="iPhone 4s" /></a></td>
+                  <td class="name"><a href="product.html">iPhone 4s</a></td>
+                  <td class="quantity">x&nbsp;1</td>
+                  <td class="total">$120.68</td>
+                  <td class="remove"><img src="assets/image/remove-small.png" alt="Remove" title="Remove" /></td>
+                </tr>
+              </table>
+            </div>
+            <div class="mini-cart-total">
+              <table>
+                <tr>
+                  <td class="right"><b>Sub-Total:</b></td>
+                  <td class="right">$601.00</td>
+                </tr>
+                <tr>
+                  <td class="right"><b>Eco Tax (-2.00):</b></td>
+                  <td class="right">$4.00</td>
+                </tr>
+                <tr>
+                  <td class="right"><b>VAT (17.5%):</b></td>
+                  <td class="right">$105.18</td>
+                </tr>
+                <tr>
+                  <td class="right"><b>Total:</b></td>
+                  <td class="right">$710.18</td>
+                </tr>
+              </table>
+            </div>
+            <div class="checkout"><a class="button" href="cart.html">View Cart</a> &nbsp; <a class="button" href="checkout.html">Checkout</a></div>
+          </div>
+        </section>
+        <!--Mini Shopping Cart End-->
+        <div class="clear"></div>
+      </section>
+
+      <nav id="menu">
+        <ul>
+          <li class="home"><a title="Home" href="/"><span>Home</span></a></li>
+        </ul>
+      </nav>
+
+    </header>
+    <!--Header Part End-->
+    <div id="container">
+      <router-outlet></router-outlet>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--Footer Part Start-->
+  <footer id="footer">
+    <div class="fpart-inner">
+      <div class="social-part">
+        <!-- Custom Column Part Start-->
+        <div class="custom_column part3">
+          <h3>Custom Column</h3>
+          <p>You can insert any content here.<br>
+            <br>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br>
+            <br>
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic. <br><br>It has survived not only five centuries, but also the leap into electronic.</p>
+        </div>
+        <!-- Custom Column Part End-->
+        <!-- Twitter Feeds Part Start-->
+        <div id="twitter_footer" class="part3">
+          <h3>Twitter Feed</h3>
+          <div class="twitter_footer">
+            <a class="twitter-timeline" href="https://twitter.com/harnishdesign" data-chrome="noheader nofooter noborders transparent" data-theme="dark" data-height="250"  data-related="twitterapi,twitter" data-aria-polite="assertive" data-widget-id="347621595801608192">Tweets by @harnishdesign</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+        </div>
+        <!-- Twitter Feeds Part End-->
+        <!-- Facebook Box Part Start-->
+        <div id="facebook" class="part3">
+          <h3>Join us on Facebook</h3>
+          <div class="fb-page" data-href="http://www.facebook.com/160281810726316" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"></div></div>
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+        </div>
+        <!-- Facebook Box Part End-->
+      </div>
+      <div class="column">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="about-us.html">Delivery Information</a></li>
+          <li><a href="about-us.html">Privacy Policy</a></li>
+          <li><a href="elements.html">Elements</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Customer Service</h3>
+        <ul>
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="sitemap.html">Site Map</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Extras</h3>
+        <ul>
+          <li><a href="#">Brands</a></li>
+          <li><a href="#">Gift Vouchers</a></li>
+          <li><a href="#">Affiliates</a></li>
+          <li><a href="#">Specials</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Order History</a></li>
+          <li><a href="#">Wish List</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+      <!-- Contact Details Start-->
+      <div class="column contact contact_icon">
+        <h3>Contact Us</h3>
+        <ul>
+          <li class="address">Central Square, 22 Hoi Wing Road, Tuen Mun, New Delhi, India</li>
+          <li class="mobile">+91 9896989598</li>
+          <li class="fax">+91 9896989598</li>
+          <li class="email"><a href="mailto:info@contact.com">info@contact.com</a></li>
+        </ul>
+      </div>
+      <!-- Contact Details End-->
+      <div class="clear"></div>
+      <div id="powered">
+        <!-- Payment Images Icon Start-->
+        <div class="payments_types part3"> <img src="assets/image/payment_paypal.png" alt="paypal" title="PayPal"> <img src="assets/image/payment_american.png" alt="american-express" title="American Express"> <img src="assets/image/payment_2checkout.png" alt="2checkout" title="2checkout"> <img src="assets/image/payment_maestro.png" alt="maestro" title="Maestro"> <img src="assets/image/payment_discover.png" alt="discover" title="Discover"> </div>
+        <!-- Payment Images Icon End-->
+        <!-- Powered by Text Start-->
+        <div class="powered_text part3">
+          <p>Polishop Html Template © 2013<br />
+            Template By <a target="_blank" href="http://harnishdesign.net">Harnish Design</a></p>
+        </div>
+        <!-- Powered by Text End-->
+        <!-- Follow Social Icons Start-->
+        <div class="social part3"> <a href="http://facebook.com/harnishdesign" target="_blank"><img src="assets/image/facebook.png" alt="Facebook" title="Facebook"></a> <a href="https://twitter.com/#!/harnishdesign" target="_blank"><img src="assets/image/twitter.png" alt="Twitter" title="Twitter"> </a> <a href="#" target="_blank"> <img src="assets/image/googleplus.png" alt="Google+" title="Google+"> </a> <a href="#" target="_blank"> <img src="assets/image/pinterest.png" alt="Pinterest" title="Pinterest"> </a> <a href="#" target="_blank"> <img src="assets/image/rss.png" alt="RSS" title="RSS"> </a> <a href="http://www.vimeo.com/#" target="_blank"> <img src="assets/image/vimeo.png" alt="Vimeo" title="Vimeo"> </a> </div>
+        <!-- Follow Social Icons End-->
+        <div class="clear"></div>
+      </div>
+      <!-- Back to Top Button Start-->
+      <div class="back-to-top" id="back-top"><a title="Back to Top" href="javascript:void(0)" class="backtotop">Top</a></div>
+      <!-- Back to Top Button End-->
+    </div>
+  </footer>
+  <!--Footer Part End-->
+</div>
