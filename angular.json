@@ -25,6 +25,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/carousel.css",
               "src/assets/css/flexslider.css",
               "src/assets/css/slideshow.css",
@@ -32,6 +33,7 @@
               "src/assets/js/colorbox/colorbox.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.js",
               "src/assets/js/cloud_zoom.js",
               "src/assets/js/custom.js",
               "src/assets/js/html5.js",

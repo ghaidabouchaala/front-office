@@ -1,0 +1,10 @@
+<div class="parent">
+    <div class="card" *ngFor="let product of products" >
+      <img src="assets/image/product/iPhone5-small-banner-220x350.jpg" style="width:100%" alt="photo">
+      <h1>{{product.label}}</h1>
+      <p class="price">{{product.price}}</p>
+      <p>{{product.description}}</p>
+      <p><button>Add to Cart</button></p>
+    </div>
+  <!-- Carousel End-->
+</div>
