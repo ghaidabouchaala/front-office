@@ -1,0 +1,56 @@
+<div id="container">
+  <!--Left Part-->
+  <div id="column-left">
+    <div class="box">
+      <div class="box-heading">Account</div>
+      <div class="box-content">
+        <ul class="list-item">
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/register">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Left End-->
+  <!--Middle Part Start-->
+  <div id="content">
+    <!--Breadcrumb Part Start-->
+    <div class="breadcrumb"> <a href="index.html">Home</a> » <a href="#">Account</a> » <a href="login.html">Login</a> </div>
+    <!--Breadcrumb Part End-->
+    <h1>Account Login</h1>
+    <div class="login-content">
+      <div class="left">
+        <h2>New Customer</h2>
+        <div class="content">
+          <p><b>Register Account</b></p>
+          <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
+          <a class="button" href="#">Continue</a></div>
+      </div>
+      <div class="right">
+        <h2>Returning Customer</h2>
+        <form  (ngSubmit)="userLogin()">
+          <div class="content">
+            <p>I am a returning customer</p>
+            <b>E-Mail Address:</b><br>
+            <label for="email">
+              <input type="text" id="email" name="email" [(ngModel)]="credentials.email">
+            </label>
+            <br>
+            <br>
+            <b>Password:</b><br>
+            <label for="password">
+              <input type="password" id="password" name="password" [(ngModel)]="credentials.password">
+            </label>
+            <br>
+            <br>
+            <div>
+              <button type="submit" class="btn btn-dark" >Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--Middle Part End-->
+  <div class="clear"></div>
+</div>
