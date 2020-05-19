@@ -1,10 +1,14 @@
 <div class="parent">
     <div class="card" *ngFor="let product of products" >
       <img src="assets/image/product/iPhone5-small-banner-220x350.jpg" style="width:100%" alt="photo">
-      <h1>{{product.label}}</h1>
-      <p class="price">{{product.price}}</p>
+      <h1>label {{product.label}}</h1>
+      <p class="price"> price {{product.price}}</p>
+      <p class="price"> quantity {{product.quantity}}</p>
+      <p class="bq">
+        <input type="number" id="bq" name="bq" min="1" [max]="product.quantity" placeholder="enter quantity" [(ngModel)]="product.boughtQuantity" >
+      </p>
       <p>{{product.description}}</p>
-      <p><button>Add to Cart</button></p>
+      <p><button (click)="buyProduct(product)">Buy Product</button></p>
     </div>
   <!-- Carousel End-->
 </div>

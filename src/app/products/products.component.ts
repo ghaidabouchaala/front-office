@@ -19,5 +19,12 @@ export class ProductsComponent implements OnInit {
       data => this.products = data
     );
   }
+  buyProduct(product) {
+    this.productService.buyProduct(product.product_id, product.boughtQuantity).subscribe(
+      data => {
+        this.getProducts();
+      }
+    );
+  }
 
 }

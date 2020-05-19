@@ -5,4 +5,5 @@ export class Product {
   quantity: number;
   price: number;
   photo: string;
+  boughtQuantity: number = 0;
 }

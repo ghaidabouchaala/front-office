@@ -28,18 +28,24 @@
       </div>
       <div class="right">
         <h2>Returning Customer</h2>
-        <form enctype="multipart/form-data" method="post" action="">
+        <form  (ngSubmit)="userLogin()">
           <div class="content">
             <p>I am a returning customer</p>
             <b>E-Mail Address:</b><br>
-            <input type="text" value="" name="email">
+            <label for="email">
+              <input type="text" id="email" name="email" [(ngModel)]="credentials.email">
+            </label>
             <br>
             <br>
             <b>Password:</b><br>
-            <input type="password" value="" name="password">
+            <label for="password">
+              <input type="password" id="password" name="password" [(ngModel)]="credentials.password">
+            </label>
             <br>
             <br>
-            <button type="submit" class="button" >Login </button>
+            <div>
+              <button type="submit" class="btn btn-dark" >Login</button>
+            </div>
           </div>
         </form>
       </div>

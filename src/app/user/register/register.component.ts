@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../shared/services/user.service';
 import {User} from '../../shared/models/user';
 import Swal from 'sweetalert2';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,8 @@ import Swal from 'sweetalert2';
 export class RegisterComponent implements OnInit {
   user = new User();
   confirmPassword: string;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +28,7 @@ export class RegisterComponent implements OnInit {
             text: 'Registration succeeded!',
           });
           console.log(data);
+          this.router.navigateByUrl('/login');
         } else {
           Swal.fire({
             icon: 'error',
@@ -35,11 +38,13 @@ export class RegisterComponent implements OnInit {
         }
       },
       error => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Registration Failed!',
-        });
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Registration Failed!',
+          });
+          this.user = new User();
+          this.confirmPassword = '';
       }
   );
   }
